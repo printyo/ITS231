@@ -14,12 +14,12 @@ public class Recursion {
     }
 
     static int sumDigit(int n) {
-    //Ex2. Complete the content of this method
+        // Ex2. Complete the content of this method
         if (n == 0) {
             return 0;
         } else {
             int x = n % 10;
-            int y = n/10;
+            int y = n / 10;
             return x + sumDigit(y);
         }
     }
@@ -35,11 +35,11 @@ public class Recursion {
         // */
 
         // Uncomment these lines below to test your sumDigit code
-        ///*
-          System.out.println("sumDigit(123456789)");
-          System.out.println("Your answer is "+ sumDigit(123456789));
-          System.out.println("The correct answer is 45");
-         //*/
+        /// *
+        System.out.println("sumDigit(123456789)");
+        System.out.println("Your answer is " + sumDigit(123456789));
+        System.out.println("The correct answer is 45");
+        // */
     }
 
 }
