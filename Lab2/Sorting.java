@@ -100,13 +100,12 @@ public class Sorting {
             for (int j = i - 1; j >= 0 && A[j] > temp; j--) {
                 // Complete this method. Note the method swap is provided.
                 swap(A, tempIndex, j);
-                tempIndex --;
-                //System.out.println(i);
+                tempIndex--;
+                // System.out.println(i);
                 printArray(A);
             }
         }
     }
-
 
     /**
      * Sorts an integer array using the Merge Sort algorithm recursively.
@@ -135,7 +134,9 @@ public class Sorting {
         // Complete this method.
         // Call RecursiveMergeSort for leftHalf, rightHalf, and merge them. Note the
         // method merge is provided.
-
+        RecursiveMergeSort(leftHalf);
+        RecursiveMergeSort(rightHalf);
+        merge(A, leftHalf, rightHalf);
     }
 
     /**
@@ -218,6 +219,10 @@ public class Sorting {
             }
             // Complete this method.
             // Call itself for sorting the leftHalf and the rightHalf
+            RecursiveQuickSort(A, start, start + l_count - 1);
+
+            RecursiveQuickSort(A, start + l_count + 1, start + l_count + r_count);
+
         }
 
     }
@@ -291,8 +296,8 @@ public class Sorting {
         int[] D = { 45, 12, 89, 36, 64, 22, 75, 51, 9 };
         printArray(D);
         System.out.println("Your Solution is ");
-        // RecursiveQuickSort(D, 0, D.length - 1);
-        // printArray(D);
+        RecursiveQuickSort(D, 0, D.length - 1);
+        printArray(D);
     }
 
 }

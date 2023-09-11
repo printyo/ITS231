@@ -50,16 +50,15 @@ public class HashTable {
 	// Search for the address of the key
 	//Searching for a key is similar to filling in data to Hash
 	//Most code can be cut and pasted from the method fillHashTable
-    /* 
 	void search(int key) {
 		int orig_addr = 0;
 
 		//Step1: Find an original address according to the Hash function
 		if (hfunction == "Division") {
-			orig_addr = 0; // Replace 0 with your code
+			orig_addr = key%hsize; // Replace 0 with your code
 		} else if (hfunction == "Folding") {
 			int C = 100;
-			orig_addr = 0; // Replace 0 with your code
+			orig_addr = (Math.floorDiv(key, C) + (key%C))%hsize; // Replace 0 with your code
 		}
 
 		//Step2: check collision. if collision, find the key in an open address
@@ -67,21 +66,21 @@ public class HashTable {
 		int fi = 0; // fi = f(i)
 		int addr = orig_addr;
 
-		while (0) { // Replace 0 with your code
+		while (H[addr] != key) { // Replace 0 with your code
 
 			if (openAddrType == "Linear") {
-				fi = 0; // Replace 0 with your code
+				fi = i; // Replace 0 with your code
 			} else if (openAddrType == "Quadratic") {
-				fi = 0; // Replace 0 with your code
+				fi = i*i; // Replace 0 with your code
 
 			}
-			addr = 0; // Replace 0 with your code
+			addr = (orig_addr + fi)%hsize; // Replace 0 with your code
 
 			i++;
 		}
 
 		System.out.println(key + " is found at " + addr);
-	}*/
+	}
 
 	void print() {
 		for (int i = 0; i < hsize; i++) {
@@ -161,7 +160,7 @@ public class HashTable {
 		System.out.println("\n----------------------------------------");
 
 		// ---------------------------------------------------------------
-		/*System.out.println("Test searching data in the hash table");
+		System.out.println("Test searching data in the hash table");
 		System.out.println("Search for 26 in HashTable1");
 		HashTable1.search(26);
 		System.out.println("The correct answer is  26 is found at address 2");
@@ -181,7 +180,7 @@ public class HashTable {
 		System.out.println("Search for 53 in HashTable4");
 		HashTable4.search(53);
 		System.out.println("The correct answer is  53 is found at address 1");
-*/
+
 	}
 
 }
