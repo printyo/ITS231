@@ -16,7 +16,7 @@ public class HashTable {
 	//Complete the 2nd exercise method fillHashTable
 	void fillHashTable(int key) {
 		int orig_addr = 0;
-		// Step1: Find an original address according to the Hash function
+		// Step1: Find an original address according to the Hash function 
 		if (hfunction == "Division") {
 			orig_addr = key%hsize; // Replace 0 with your code
 		} else if (hfunction == "Folding") {
@@ -24,25 +24,25 @@ public class HashTable {
 			orig_addr = (Math.floorDiv(key, C) + (key%C))%hsize; // Replace 0 with your code
 		}
 
-		//Step2: check collision. if collision, find an open address
+		//Step2: check collision. if collision, find an open address 
 		int i = 0;
 		int fi = 0; // fi = f(i)
 		int addr = orig_addr;
 
-		while (H[addr] != 0) // Replace 0 with your code
+		while (H[addr] != 0) // Replace 0 with your code 
 
 		{
 			if (openAddrType == "Linear") {
-				fi = i; // Replace 0 with your code
+				fi = i; // Replace 0 with your code 
 			} else if (openAddrType == "Quadratic") {
-				fi = i*i; // Replace 0 with your code
+				fi = i*i; // Replace 0 with your code 
 			}
 
-			addr = (orig_addr + fi)%hsize; // Replace 0 with your code
+			addr = (orig_addr + fi)%hsize; // Replace 0 with your code 
 			i++;
 		}
 
-		H[addr] = key; // Replace 0 with your code
+		H[addr] = key; // Replace 0 with your code 
 
 	}
 
@@ -55,10 +55,10 @@ public class HashTable {
 
 		//Step1: Find an original address according to the Hash function
 		if (hfunction == "Division") {
-			orig_addr = key%hsize; // Replace 0 with your code
+			orig_addr = key%hsize; // Replace 0 with your code 
 		} else if (hfunction == "Folding") {
 			int C = 100;
-			orig_addr = (Math.floorDiv(key, C) + (key%C))%hsize; // Replace 0 with your code
+			orig_addr = (Math.floorDiv(key, C) + (key%C))%hsize; // Replace 0 with your code 
 		}
 
 		//Step2: check collision. if collision, find the key in an open address
@@ -66,15 +66,15 @@ public class HashTable {
 		int fi = 0; // fi = f(i)
 		int addr = orig_addr;
 
-		while (H[addr] != key) { // Replace 0 with your code
+		while (H[addr] != key) { // Replace 0 with your code 
 
 			if (openAddrType == "Linear") {
-				fi = i; // Replace 0 with your code
+				fi = i; // Replace 0 with your code 
 			} else if (openAddrType == "Quadratic") {
-				fi = i*i; // Replace 0 with your code
+				fi = i*i; // Replace 0 with your code 
 
 			}
-			addr = (orig_addr + fi)%hsize; // Replace 0 with your code
+			addr = (orig_addr + fi)%hsize; // Replace 0 with your code 
 
 			i++;
 		}
