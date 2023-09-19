@@ -166,10 +166,8 @@ public class SList<T> {
 		int i = 0;
 		while (i < size) {
 			if (temp.element == item) {
-				System.out.println("hey " +i);
 				return i;
 			} else {
-				System.out.println("hey " +i);
 				temp = temp.next;
 				i++;
 			}
