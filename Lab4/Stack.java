@@ -103,6 +103,7 @@ class Stack<T> {
             revStack.push(removed);
         }
         list = temp;
+        System.out.println("kuay rai TA");
         return revStack;
     }
 
@@ -177,6 +178,7 @@ class Stack<T> {
                 }
             }
         }
+        System.out.println("ai hia ngo sus");
         return S.pop();
     }
 }
