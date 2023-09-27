@@ -36,7 +36,6 @@ class TestStack {
 		// continue from the previous exercise
 		// The result should be :
 		// 5
-		// 2
 		// uncomment the lines below
 		System.out.println("\n***Testing Peek for Ex1c***");
 		System.out.println("Your result is : ");
@@ -113,7 +112,7 @@ class TestStack {
 		System.out.println("a palindrome.");
 		System.out.println();
 		
-		// The result should be : gatemaNnametag is a palindrome.
+		// The result should be : Reliefpfeiler is a palindrome.
 		System.out.println("Your result is : ");
 		System.out.print(word4 + " is ");
 		if (!Stack.isPalindrome(word4))

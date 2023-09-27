@@ -82,7 +82,7 @@ class Stack<T> {
             answer.list.addFirst(0);
         } else {
             while (x > 0) {
-                answer.list.addFirst(x % 2);
+                answer.push(x % 2);
                 x /= 2;
             }
         }
@@ -96,14 +96,18 @@ class Stack<T> {
      */
     Stack<T> reverseStack() {// Exercise 3
         Stack<T> revStack = new Stack<T>();
-        SList<T> temp = new SList<T>();
+        Stack<T> temp = new Stack<T>();
         while (list.size > 0) {
             T removed = pop();
-            temp.addLast(removed);
+            temp.push(removed);
             revStack.push(removed);
         }
-        list = temp;
-        System.out.println("kuay rai TA");
+
+        while (!temp.isEmpty()) {
+            T n = temp.pop();
+            push(n);
+        }
+
         return revStack;
     }
 
@@ -178,7 +182,6 @@ class Stack<T> {
                 }
             }
         }
-        System.out.println("ai hia ngo sus");
         return S.pop();
     }
 }
