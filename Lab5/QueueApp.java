@@ -71,24 +71,23 @@ public class QueueApp {
         }
         // Exercise 4
         // add your code here
-        String tong = Q.dequeue();
-        String pupa = Q.dequeue(); //this is 1am print brain got worse
-        
-        while (Q.isEmpty() == false) {
-            String stupid = Q.dequeue();
-            if (isPrefix(tong, pupa, stupid)) {
-                String buffalo = evalPrefixString(tong, pupa, stupid);
+        String x = Q.dequeue();
+        String y = Q.dequeue();
+        while (!Q.isEmpty()) {
+            String z = Q.dequeue();
+            if (isPrefix(x, y, z)) {
+                String a = evalPrefixString(x, y, z);
                 if (Q.isEmpty()) {
-                    return buffalo;
+                    return a;
                 } else {
-                    Q.enqueue(buffalo);
-                    tong = Q.dequeue();
-                    pupa = Q.dequeue();
+                    Q.enqueue(a);
+                    x = Q.dequeue();
+                    y = Q.dequeue();
                 }
             } else {
-                Q.enqueue(tong);
-                tong = pupa;// so true bro
-                pupa = stupid; 
+                Q.enqueue(x);
+                x = y;
+                y = z;
             }
         }
 
@@ -136,7 +135,7 @@ public class QueueApp {
 
                     temp -= resourceAmt;
                     resourceAmt = 0;
-                    Q.enqueue(temp); //yeeeeeeeeeesssssiirrrrrrrrr
+                    Q.enqueue(temp);
                     P.enqueue(name);
 
                 } else {

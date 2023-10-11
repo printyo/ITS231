@@ -66,10 +66,10 @@ public class Queue<T> {
 	 */
 	Queue<T> copyQueue() { // Exercise 2
 		Queue<T> Q2 = new Queue<T>();
-		for (int yoo = 0; yoo < list.size; yoo++) {
-			T omgbro = dequeue();
-			Q2.enqueue(omgbro);
-			enqueue(omgbro);
+		for (int i = 0; i < list.size; i++) {
+			T x = dequeue();
+			Q2.enqueue(x);
+			enqueue(x);
 		}
 		// Add your code here
 		return Q2;
@@ -83,21 +83,21 @@ public class Queue<T> {
 	 * @return true if the queues are identical, false otherwise
 	 */
 	boolean isIdentical(Queue<T> Q2) {
-		boolean holyMollyJesus = true;
+		boolean returnConstant = true;
 		if (list.size != Q2.list.size) {
 			return false;
 		}
-		for (int aiyaaa = 0; aiyaaa < list.size; aiyaaa++) {
-			T kadoodle = dequeue();
-			T yipeekayak = Q2.dequeue(); //12am monday print ==> brain not working properly
-			enqueue(kadoodle);
-			Q2.enqueue(yipeekayak);
-			if (!(kadoodle == yipeekayak)) {
-				holyMollyJesus = false;
+		for (int i = 0; i < list.size; i++) {
+			T x = dequeue();
+			T y = Q2.dequeue();
+			enqueue(x);
+			Q2.enqueue(y);
+			if (x != y) {
+				returnConstant = false;
 				
 			}
 		}
-		return holyMollyJesus; // Exercise 3
+		return returnConstant; // Exercise 3
 	}
 
 	/**
