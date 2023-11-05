@@ -32,7 +32,7 @@ public class TestBST {
 		System.out.println("The correct answer is 4");
 
 		// Ex2. Uncomment below to test delete() //////////////////////////////
-		/*System.out.println("\nTesting delete()...");
+		System.out.println("\nTesting delete()...");
 
 		if (bst.delete(2) == null) {
 			System.out.println("bst.delete(2) is null");
@@ -65,10 +65,10 @@ public class TestBST {
 		System.out.println("\nThe correct answer is 9 15\n");
 
 		System.out.println("Height of your BST =  " + bst.findHeight());
-		System.out.println("The correct answer is 2");*/
+		System.out.println("The correct answer is 2");
 
 		// Ex3. Uncomment below to test search() //////////////////////////////
-		/*System.out.println("\nTesting search()...");
+		System.out.println("\nTesting search()...");
 		if (bst.search(12)) {
 			System.out.println("12 is found");
 		} else {
@@ -81,20 +81,20 @@ public class TestBST {
 		} else {
 			System.out.println("15 is not found");
 		}
-		System.out.println("The correct answer is 15 is found\n");*/
+		System.out.println("The correct answer is 15 is found\n");
 
 		// Ex4. Uncomment below to test findSmallest() //////////////////////////////
-		/*bst.insert(1);
+		bst.insert(1);
 		bst.insert(3);
 		bst.insert(19);
 		System.out.println("\nTesting findSmallest()...");
 		System.out.println("The smallest element is " + bst.findSmallest(bst.root).element);
-		System.out.println("The correct answer is 1\n");*/
+		System.out.println("The correct answer is 1\n");
 
 		// Ex5. Uncomment below to test findLargest() //////////////////////////////
-		/*System.out.println("\nTesting findLargest()...");
+		System.out.println("\nTesting findLargest()...");
 		System.out.println("The largest element is " + bst.findLargest(bst.root).element);
-		System.out.println("The correct answer is 19");*/
+		System.out.println("The correct answer is 19");
 
 	}
 
