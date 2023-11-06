@@ -18,7 +18,7 @@ public class TestBT {
 
         //============================ Ex.1 ============================
         //Uncomment this part of code to test your result in Ex.2
- 
+        System.out.println("\n\n\n");
         System.out.println("The height of tree1 is : " + tree1.findHeight());
         System.out.println("The correct result is 1");
 
