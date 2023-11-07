@@ -194,7 +194,7 @@ public class BT<T> {
 
 	public static BT<String> makeExpressionTree(String[] infixArr) {
 		Stack<BT<String>> BTStack = new Stack<BT<String>>();
-		Stack<BTNode<String>> parent = new Stack<BTNode<String>>(); // for keeping parent nodes
+		Stack<BTNode<String>> parent = new Stack<BTNode<String>>(); // for keeping parent nodes (operator stack)
 		String item;
 		int i = 0;
 		while (i != infixArr.length) {
@@ -205,7 +205,7 @@ public class BT<T> {
 				BTNode<String> x = new BTNode<String>(item); // convert it to a node
 				parent.push(x);
 
-			} else if (isOperator(item)) {
+			} else if (isOperator(item)) { //Case2: if item is an operator
 				BTNode<String> temp = new BTNode<String>(item);
 				if (parent.isEmpty()) { // stack is empty
 					// add your code here
@@ -236,7 +236,7 @@ public class BT<T> {
 					BTStack.push(newBT);
 				}
 				parent.pop(); //removes "("
-			} else {// Case 4: it is not an operator
+			} else {// Case 4: it is not an operator (it is operand)
 				BT<String> newTree = new BT<String>(item);
 				// add your code here
 				BTStack.push(newTree);

@@ -109,8 +109,8 @@ public class QueueApp {
         while (!Q.isEmpty() && resourceAmt != 0) {
             int temp = Q.dequeue();
             String name = P.dequeue();
-            if (limit <= resourceAmt) {
-                if (temp >= limit) {
+            if (limit <= resourceAmt) { // when there's more total than limit eg. 40 left with 3 limit
+                if (temp >= limit) { //when you need more than what the limit gives u so u go take the whole limit
                     // add your codes here
 
                     temp -= limit;
@@ -121,7 +121,7 @@ public class QueueApp {
                     }
 
                     printRoundRobin(Q, P, resourceAmt);
-                } else {
+                } else { //when you need less than the limit so you are left with 0 and no enqueue
                     // add your code here
 
                     resourceAmt -= temp;
@@ -129,7 +129,7 @@ public class QueueApp {
 
                     printRoundRobin(Q, P, resourceAmt);
                 }
-            } else {
+            } else { //when theres less total than limit eg. total is 2 but limit is 3
                 if (temp > resourceAmt) {
                     // add your code here
 
@@ -138,7 +138,7 @@ public class QueueApp {
                     Q.enqueue(temp);
                     P.enqueue(name);
 
-                } else {
+                } else { 
                     // add your code here
                     resourceAmt -= temp;
                     temp = 0;
