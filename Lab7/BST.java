@@ -32,17 +32,17 @@ public class BST<T extends Comparable<T>> extends BT<T> {
             BTNode<T> current = root;
             // insert your code
             while (current != null) {
-                if (newdata.compareTo(current.element) <= 0) {
+                if (newdata.compareTo(current.element) <= 0) { // if new data is < current
                     parent = current;
                     current = current.left;
-                } else { // > 0
+                } else { // if new data is > current
                     parent = current;
                     current = current.right;
                 }
-            }
-            if (newdata.compareTo(parent.element) <= 0) {
+            }// current is now null
+            if (newdata.compareTo(parent.element) <= 0) { // if new data is < parent
                 parent.left = new BTNode<T>(newdata);
-            } else { // >0
+            } else { // if newdata is > parent
                 parent.right = new BTNode<T>(newdata);
             }
         }
@@ -64,13 +64,13 @@ public class BST<T extends Comparable<T>> extends BT<T> {
 
         while (current != null) {
             // insert your code
-            if (item.compareTo(current.element) == 0) {
+            if (item.compareTo(current.element) == 0) { //if you found the element you want to delete
                 break;
-            } else if (item.compareTo(current.element) < 0) {
+            } else if (item.compareTo(current.element) < 0) { // if item < current
                 parent = current;
                 current = current.left;
                 currentIsLeftChild = true;
-            } else { // > 0
+            } else { // if item > current
                 parent = current;
                 current = current.right;
                 currentIsLeftChild = false;
@@ -88,10 +88,10 @@ public class BST<T extends Comparable<T>> extends BT<T> {
         if (current.left == null && current.right == null) {
             // insert your code
             if (parent == null) {
-                root = null; // only 1 node
+                root = null; // only 1 node so remove everything
             } else {
-                if (currentIsLeftChild) {
-                    parent.left = null;
+                if (currentIsLeftChild) { // check if item is on the left or right
+                    parent.left = null; 
                 } else { // on the right
                     parent.right = null;
                 }
@@ -101,15 +101,15 @@ public class BST<T extends Comparable<T>> extends BT<T> {
         // Case 2: If the deleted node has one child
         // Case 2.1: if its child node is on the right
         if ((current.left == null)) { // If only has one right child or no children.
-            if (currentIsLeftChild) { //
+            if (currentIsLeftChild) { //left of the parent
                 // insert your code
-                if (parent == null) {
+                if (parent == null) {// want to remove the root
                     root = current.right;
                 } else {
                     parent.left = current.right;
                 }
 
-            } else {
+            } else {//right of the parent
                 // insert your code
                 if (parent == null) {
                     root = current.right;
@@ -120,14 +120,14 @@ public class BST<T extends Comparable<T>> extends BT<T> {
         }
         // Case 2.2: If its child node is on the left
         else if ((current.right == null)) { // Only one left child
-            if (currentIsLeftChild) {
+            if (currentIsLeftChild) {//left of parent
                 // insert your code
-                if (parent == null) {
+                if (parent == null) {//if u want to delete root
                     root = current.left;
                 } else {
                     parent.left = current.left;
                 }
-            } else {
+            } else {//right of parent
                 // insert your code
                 if (parent == null) {
                     root = current.left;
@@ -138,12 +138,12 @@ public class BST<T extends Comparable<T>> extends BT<T> {
         } else { // Case 3: Have both children
             BTNode<T> maxleft = current.left;
             BTNode<T> maxleftParent = current;
-            while (maxleft.right != null) {
+            while (maxleft.right != null) { //find max left
                 maxleftParent = maxleft;
                 maxleft = maxleft.right;
             }
-            current.element = maxleft.element;
-            if (maxleft.left == null && maxleft.right == null) { // Case 3.1 if maxleft is a leave, then ..
+            current.element = maxleft.element; //replace current with maxleft and delete last maxleft
+            if (maxleft.left == null && maxleft.right == null) { // Case 3.1 if maxleft is a leaf, then ..
                 // insert your code
                 maxleftParent.right = null;
             } else if (maxleft.left != null) { // Case 3.2 if maxleft has a left child, then .
